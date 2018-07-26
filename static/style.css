@@ -1,3 +1,9 @@
+.btn-link {
+	color: black;
+	text-decoration: none;
+	text-align: center;
+} 
+
 .navbar {
 	position:fixed !important;
 	z-index:2;
