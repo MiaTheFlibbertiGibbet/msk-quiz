@@ -1,1 +1,1 @@
-web: gunicorn -w 4 -b "0.0.0.0:$PORT" quiz:app
+web: gunicorn -w 4 -b "0.0.0.0:$PORT" quizquestions:app
