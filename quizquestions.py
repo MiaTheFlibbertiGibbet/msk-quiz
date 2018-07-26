@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_from_directory
 import requests
 
 app = Flask("quiz")
@@ -11,6 +11,9 @@ def home():
 def takethequiz():
 	return render_template("quiz.html")
 
+@app.route('/<path:filename>')
+def send_file(filename):
+	return send_from_directory(app.static_folder, filename)
 
 @app.route('/quiz', methods=['POST'])
 def quiz():
