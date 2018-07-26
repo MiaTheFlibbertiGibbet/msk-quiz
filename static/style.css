@@ -254,9 +254,10 @@
 	padding: 60px 0px 60px 0px;
 }
 
-.result-text {
+.result-text p{
 	font-family: 'Open Sans', sans-serif;
 	font-size:30px;
+	font-weight:center;
 	text-align:center;
 }
 
