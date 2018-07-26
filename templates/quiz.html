@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MSK Quiz</title>
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand" >
+    <link rel="stylesheet" href="{{ url_for('static', filename='dist/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+</head>
+
+<body id="quiz-body">
+
+  <div>
+    {{product}}
+  </div>
+
+<form method="post" action="/quiz">
+
+<!-- NAVIGATION BAR -->
+<nav class="navbar navbar-expand-lg navbar-light" >
+    <a class="navbar-brand justify-content-left" href="#">
+    <img src="images/logo.png" width="50" height="50" alt="" id="logo">
+    </a>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav nav justify-content-end">
+            <button <input class="btn btn-outline-successful" type="button"> Back to Homepage</button>
+        </ul>
+    </div>
+</nav>
+
+<!-- QUESTION1 -->
+<div>
+<h1 class="question">What's your skin type?</h1>
+
+    <div class="container">
+    <div class="row">
+    <div class="col-sm">
+       <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 300px;">
+        <img class="card-img-top" src="images/dry.png" width="250" height="250" alt="Card image cap">
+        <div class="card-body">
+            <p class="text"> <input type="checkbox" name="skin" value="dry" class="quiz-checkbox">Dry</p>
+        </div>
+    </div>
+    </div>
+
+    <div class="col-sm">
+       <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 300px;">
+        <img class="card-img-top" src="images/combination.png" width="250" height="250" alt="Card image cap">
+        <div class="card-body">
+            <p class="text"> <input type="checkbox" name="skin" value="combination" class="quiz-checkbox"> Combination</p>
+        </div>
+    </div>
+    </div>
+    <div class="col-sm">
+       <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 300px;">
+        <img class="card-img-top" src="images/oily.png" width="250" height="250" alt="Card image cap">
+        <div class="card-body">
+            <p class="text"> <input type="checkbox" name="skin" value="oily" class="quiz-checkbox">Oily</p>
+        </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<!-- QUESTION2 -->
+<div>
+<h1 class="question">What's the main problem you want to resolve?</h1>
+
+    <div class="container">
+    <div class="row">
+    <div class="col-sm">
+       <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 300px;">
+        <img class="card-img-top" src="images/wrinkles.png" width="250" height="250" alt="Card image cap">
+        <div class="card-body">
+            <p class="text"> <input type="checkbox" name="problem" value="ageing" class="quiz-checkbox"> Ageing</p>
+        </div>
+    </div>
+    </div>
+
+    <div class="col-sm">
+       <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 300px;">
+        <img class="card-img-top" src="images/pores.png" width="250" height="250" alt="Card image cap">
+        <div class="card-body">
+            <p class="text"> <input type="checkbox" name="problem" value="pores" class="quiz-checkbox">Visible Pores</p>
+        </div>
+    </div>
+    </div>
+    <div class="col-sm">
+       <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 300px;">
+        <img class="card-img-top" src="images/acne.png" width="250" height="250" alt="Card image cap">
+        <div class="card-body">
+            <p class="text"> <input type="checkbox" name="problem" value="acne" class="quiz-checkbox">Acne</p>
+        </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+ <div id="result-btn">
+    <input class="btn btn-outline-successful action-btn" type="submit" id="submit">Get  Result</input> 
+</div>
+
+</form>
+
+<!-- CONTACT SECTION-->
+<div id="contact-container">
+  <p id="contact-subtitle">We'd love to hear from you!</p>
+  <div class="row">
+    <div class="col-md-4" id="contact-details">
+      <p>Get in touch</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span>London, UK</p>
+      <p><span class="glyphicon glyphicon-phone"></span>Phone: +44 1234567890</p>
+      <p><span class="glyphicon glyphicon-envelope"></span>Email: mail@msk.com</p>
+    </div>
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text">
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" >
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
+      <br>
+      <div class="row">
+        <div class="col-md-12 form-group">
+          <button class="pull-right" id="submit-botton" type="submit">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- FOOTER -->
+<footer class="container-fluid bg-4 text-center">
+<p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+</footer>
+
+
+</body>
+
+   
+
+
+
+

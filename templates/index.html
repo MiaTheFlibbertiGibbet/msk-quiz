@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MSK Homepage</title>
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand" >
+    <link rel="stylesheet" href="{{ url_for('static', filename='dist/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR -->
+<nav class="navbar navbar-expand-lg navbar-light" >
+    <a class="navbar-brand justify-content-left" href="#">
+    <img src="images/logo.png" width="50" height="50" alt="" id="logo">
+    </a>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav nav justify-content-end">
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#subtitle">About</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#tagline-features">Features</a>
+            
+        </li class="nav-item">
+            <a href="{{url_for('takethequiz')}}" class="btn btn-outline-successful action-btn" >Take Quiz</a>
+        </ul>
+    </div>
+</nav>
+
+
+<!-- BANNER-->
+<div class="jumbotron jumbotron-fluid">
+    <p id="jumbo-tagline">Find your perfect mask.</p>
+  </div>
+</div>
+
+
+<!-- ABOUT -->
+<div class="container-about bg-2">
+    <div class="row">
+    <div class="col">
+        <h3 id="subtitle">What is MSK?</h3>
+        <p class="text">MSK is a handy skincare tool to help you find the best face masks to tackle your skin's needs and concerns. Our database contains a range of face masks, including clay, tissue masks, charcoal and cream masks.  </p>
+        <p class="text">Whether you have oily, dry, or combinations skin, there’s an appropriate face mask for you.</p>
+    </div>
+    <div class="col">
+        <img src='about.png' class= 'container-image'>
+    </div>
+</div>
+
+<!-- CALL TO ACTION-->
+ <div class="action-call">
+    <p class="second-tagline">Is your skin not feeling at its best?</p>
+    <a href="{{url_for('takethequiz')}}" class="btn btn-outline-successful action-btn" >Take Quiz</a>
+   
+</div>
+
+
+<!-- FEATURES -->
+<div class="container-features bg-3 features-list justify-content-center">    
+  <h2 class="second-tagline" id="tagline-features">3 Easy Steps to Your Perfect Mask!</h2><br>
+
+  <div class="row">
+    <div class="col-sm-4 text-center">
+      <h3>Step 1</h3>
+      <p><small> Complete our fun quiz.</small></p>
+      <br>
+      <img src="https://image.flaticon.com/icons/svg/139/139179.svg" class="img-responsive margin center center-block" style="width:40%" alt="Image">
+      
+    </div>
+    <div class="col-sm-4 center-block"> 
+      <h3>Step 2</h3>
+      <p><small>Receive your final results and recommended mask.</small></p>
+      <br>
+      <img src="https://image.flaticon.com/icons/svg/1022/1022276.svg" class="img-responsive margin center-block" style="width:40%" alt="Image">
+    </div>
+    <div class="col-sm-4 text-center"> 
+       <h3>Step 3</h3>
+      <p><small> Relax and enjoy your perfectly matched mask!</small></p>
+      <br>
+      <img src="https://image.flaticon.com/icons/svg/1022/1022252.svg" class="img-responsive margin center-block" style="width:40%" alt="Image">
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT SECTION -->
+<div>
+  <p id="contact-subtitle">We'd love to hear from you!</p>
+  <div class="row">
+    <div class="col-md-4" id="contact-details">
+      <p>Get in touch</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span>London, UK</p>
+      <p><span class="glyphicon glyphicon-phone"></span>Phone: +44 1234567890</p>
+      <p><span class="glyphicon glyphicon-envelope"></span>Email: mail@msk.com</p>
+    </div>
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
+      <br>
+      <div class="row">
+        <div class="col-md-12 form-group">
+          <button class="pull-right" id="submit-botton" type="submit">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- FOOTER -->
+<footer class="container-fluid bg-4 text-center">
+<p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+</footer>
+
+
+
+</body>
+        
